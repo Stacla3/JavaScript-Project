@@ -15,6 +15,54 @@ let height = 1.64;
 
 //3. boolean
 let check = true;
-console.log("My age is " + age);
-console.log("nickel");
-console.log("nickel");
+
+// let ages = prompt("ใส่อายุของคุณ");
+// if (ages == 25) {
+//   console.log("Pass");
+// } else {
+//   console.log("Not Pass");
+// }
+
+//4. array
+
+let car = ["ferrari", "Ford", "Lambogini"];
+if (car.includes("Ford")) {
+  console.log("Nickel");
+}
+
+//5. object
+let student = {
+  name: "Nickel",
+  age: 19,
+  grade: 3.33,
+};
+
+let num = [2, 3, 4, 5];
+console.log(student.grade);
+
+let doubleNum = num.map((a) => {
+  return a * 2;
+});
+
+doubleNum.forEach((s) => {
+  console.log(s);
+});
+
+let ford = car.filter((s) => {
+  if (s == "Ford") {
+    return true;
+  }
+});
+
+// console.log(num);
+ford.forEach((s) => {
+  console.log(s);
+});
+
+const firstName = document.getElementById("firstName");
+const nickel = document.getElementsByClassName("showText");
+const clickButton = document.getElementsByClassName("clickme");
+clickButton[0].addEventListener("click", () => {
+  nickel[0].innerHTML = "<p>hello Nickel welcome back!</p>";
+});
+console.log(firstName.type);
