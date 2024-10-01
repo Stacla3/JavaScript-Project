@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    pad: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.container {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.group-button {
+    display: flex;
+    margin-bottom: 2rem;
+}
+.tablinks button{
+    margin-right: .5rem;
+    border-right: 2px solid cornflowerblue;
+    background-color: white;
+    color: rgb(0, 162, 255);
+    font-size: 20px;
+    border: 0;
+}
+.content {
+    transition: 4s ease;
+    display: none;
+    position: relative;
+}
+.container-content {
+    display: flex;
+    flex-direction: column;
+}
+.activelink button {
+    border-right: 2px solid rgb(0, 85, 241);
+    color: rgb(0, 85, 241);
+}
+.activecontent {
+    animation: fade 1s;
+    display: block;
+}
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

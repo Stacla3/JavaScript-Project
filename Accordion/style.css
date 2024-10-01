@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container1 {
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.accordion {
+    display: grid;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #242426;
+    color: white;
+    transition: 0.2s ease;
+}
+.content p {
+    padding: 1rem;
+    max-height: 50px;
+    background-color: wheat;
+    color: black;
+    overflow: hidden;
+    transition: 0.2s ease;
+}
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.2s ease;
+}
+.header:hover{
+    background-color: #5a5a5a;
+}
+.header::after {
+    content: '\002B';   
+}
+.active {
+    background-color: #5a5a5a;
+}
+.active::after{
+    content: "\2212";
+}
+.active-content {
+    max-height: 50px;
+}
+
