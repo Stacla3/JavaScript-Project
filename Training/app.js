@@ -16,3 +16,5 @@ let height = 1.64;
 //3. boolean
 let check = true;
 console.log("My age is " + age);
+console.log("nickel");
+console.log("nickel");
