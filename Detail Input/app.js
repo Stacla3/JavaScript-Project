@@ -2,7 +2,6 @@ let firstName = document.querySelector('input[name=firstName]')
 let lastName = document.querySelector('input[name=lastName]')
 let telePhone = document.querySelector('input[name=telphone]')
 let emails = document.querySelector('input[name=email]')
-let btnSubmit = document.querySelector('.btnSubmit')
 
 function submitData(){
     let genders = document.querySelector('input[name=gender]:checked')
@@ -28,26 +27,36 @@ function submitData(){
 
 let checkErorFirstName = document.querySelectorAll('.checkErorFirstName')
 firstName.addEventListener('keyup', ()=> {
+    let checkEror = 0
     if(firstName.value.length != 0){
         for(let i = 0; i < firstName.value.length; i++){
             let char = firstName.value[i]
             if(!(char >= 'a' && char <= 'z') && !(char >= 'A' && char <= 'Z')){
                 checkErorFirstName[0].innerHTML = 'please enter a character only.'
+                checkEror = 1
             }
         }
+        if(checkEror == 0){
+           checkErorFirstName[0].innerHTML = ''
+        } 
     }else{
         checkErorFirstName[0].innerHTML = ''
     }
 })
 let checkErorLastName = document.querySelectorAll('.checkErorLastName')
 lastName.addEventListener('keyup', ()=> {
+    let checkEror = 0
     if(lastName.value.length != 0){
         for(let i = 0; i < lastName.value.length; i++){
             let char = lastName.value[i]
             if(!(char >= 'a' && char <= 'z') && !(char >= 'A' && char <= 'Z')){
                 checkErorLastName[0].innerHTML = 'please enter a character only.'
+                checkEror = 1
             }
         }
+        if(checkEror == 0){
+            checkErorLastName[0].innerHTML = ''
+        } 
     }else{
         checkErorLastName[0].innerHTML = ''
     }
@@ -55,12 +64,17 @@ lastName.addEventListener('keyup', ()=> {
 
 let checkErortelphone = document.querySelectorAll('.checkErorTelphone')
 telePhone.addEventListener('keyup', ()=> {
+    let checkEror = 0
     if(telePhone.value.length != 0){
         for(let i = 0; i < telePhone.value.length; i++){
             let char = telePhone.value[i]
             if(!(Number.parseInt(char)) && char != '0'){
                 checkErortelphone[0].innerHTML = 'please enter a number only.'
+                checkEror = 1
             } 
+        }
+        if(checkEror == 0){
+            checkErortelphone[0].innerHTML = ''
         }
     }else{
         checkErortelphone[0].innerHTML = ''
