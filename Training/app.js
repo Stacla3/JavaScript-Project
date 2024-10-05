@@ -101,3 +101,4 @@ function clicked(event){
 }
 
 let count = 0
+let text = "Hello"
