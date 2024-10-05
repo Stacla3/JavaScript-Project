@@ -99,3 +99,5 @@ function clicked(event){
   let dome = event.target
   dome.style.backgroundColor = 'blue'
 }
+
+let count = 0
