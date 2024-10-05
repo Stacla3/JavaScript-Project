@@ -59,10 +59,43 @@ ford.forEach((s) => {
   console.log(s);
 });
 
-const firstName = document.getElementById("firstName");
-const nickel = document.getElementsByClassName("showText");
-const clickButton = document.getElementsByClassName("clickme");
-clickButton[0].addEventListener("click", () => {
-  nickel[0].innerHTML = "<p>hello Nickel welcome back!</p>";
-});
-console.log(firstName.type);
+// const firstName = document.getElementById("firstName");
+// const nickel = document.getElementsByClassName("showText");
+// const clickButton = document.getElementsByClassName("clickme");
+// clickButton[0].addEventListener("click", () => {
+//   nickel[0].innerHTML = "<p>hello Nickel welcome back!</p>";
+// });
+// console.log(firstName.type);
+
+// function changeGender(value){
+//   console.log("changeGender: "+value)
+
+//   let inputGenders = document.querySelectorAll('input[name="gender"]')
+//   for(let i = 0;i < inputGenders.length; i++){
+//     if(inputGenders[i].checked == true){
+//       console.log(inputGenders[i].value)
+//     }
+//   }
+// }
+
+// const btnInterest = document.querySelector('.btnInterest')
+// btnInterest.addEventListener('click', ()=>{
+//   const inputBox = document.querySelectorAll('input[name="interesting"]')
+//   let content = '<ul>'
+//   for(let i = 0; i < inputBox.length; i++){
+//     if(inputBox[i].checked){
+//       content += '<li>'+inputBox[i].value+'</li>'
+//     }
+//   }
+//   content += '</ul>'
+//   const contents = document.querySelector('.contents')
+//   contents.innerHTML = content
+// })
+const linkGoogle = document.querySelector('#linkToGoogle')
+console.log(linkGoogle.getAttribute('href'))
+linkGoogle.setAttribute('href', 'https://youtube.com')
+
+function clicked(event){
+  let dome = event.target
+  dome.style.backgroundColor = 'blue'
+}

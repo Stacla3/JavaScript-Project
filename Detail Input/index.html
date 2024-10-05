@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="inside-container">
+            <h1>Form</h1>
+            <h3>Firstname</h3>
+            <input type="text" name="firstName" placeholder="Enter your firstname here.">
+            <div class="checkErorFirstName check"></div>
+            <h3>Lastname</h3>
+            <input type="text" name="lastName" placeholder="Enter your lastname here.">
+            <div class="checkErorLastName check"></div>
+            <h3>Gender</h3>
+            <div class="inputRadio">
+                <div class="inside-Radio"><input type="radio" name="gender" value="ชาย"><span>male</span></div>
+                <div class="inside-Radio"><input type="radio" name="gender" value="หญิง"><span>femal</span></div>
+                <div class="inside-Radio"><input type="radio" name="gender" value="ไม่ระบุ"><span>other</span></div>
+            </div>
+            <h3>Telphone</h3>
+            <input type="text" name="telphone" maxlength="10" placeholder="Enter your telphone here.">
+            <div class="checkErorTelphone check"></div>
+            <h3>Email</h3>
+            <input type="email" name="email" placeholder="Enter your email here.">
+            <div></div>
+            <button class="btnSubmit" onclick="submitData()">Submit</button>
+            <div class="checkbtnSubmit"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
