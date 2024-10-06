@@ -101,5 +101,10 @@ function clicked(event){
 }
 
 let count = 0
-let text = "Hello"
+let text = " Hello "
 let nummber = 123
+console.log(`${count} is a zero.`)
+text = " nickel "
+console.log(parseInt(text))
+console.log(text.toUpperCase())
+console.log(text.trim())
