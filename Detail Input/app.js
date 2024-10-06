@@ -2,23 +2,28 @@ let firstName = document.querySelector('input[name=firstName]')
 let lastName = document.querySelector('input[name=lastName]')
 let telePhone = document.querySelector('input[name=telphone]')
 let emails = document.querySelector('input[name=email]')
+let genders = document.querySelectorAll('input[name=gender]')
 
 function submitData(){
-    let genders = document.querySelector('input[name=gender]:checked')
     let checkErorBtnSubmit = document.querySelector('.checkbtnSubmit')
+    let checkGender = null
+    for(let i = 0; i < genders.length; i++){
+        if(genders[i].checked){
+            checkGender = genders[i].value
+        }
+    }
     try {
         let userData = {
             firstname: firstName.value,
             lastname: lastName.value,
             telphone: telePhone.value,
             email: emails.value,
-            gender: genders.value
+            gender: checkGender
         }
-        if(userData.firstname == null || userData.lastname == null || userData.email == null || userData.gender == null){
-            checkErorBtnSubmit.innerHTML = 'can\'t not submit.'
-        }else if(userData.telphone != 'ชาย'|| userData.telphone != 'หญิง' || userData.telphone != 'ไม่ระบุ'){
+        if(userData.firstname == null || userData.lastname == null || userData.email == null || userData.gender == null || checkGender == null){
             checkErorBtnSubmit.innerHTML = 'can\'t not submit.'
         }
+        console.log(userData)
     }catch(error){
         checkErorBtnSubmit.innerHTML = 'can\'t not submit.'
         throw new Error("cannot submit data.")
