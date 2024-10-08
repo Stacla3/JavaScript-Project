@@ -108,3 +108,5 @@ text = " nickel "
 console.log(parseInt(text))
 console.log(text.toUpperCase())
 console.log(text.trim())
+console.log(text == "nickel" ? "nickel" : "false")
+console.log(Math.round(Math.random()*10))

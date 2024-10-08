@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  --green: #099268;
+  --greenhove: #12b886;
+  --grey: #242426;
+  --white: #fff;
+  --greyfill: #adb5bd;
+}
+
+body {
+    color:var(--white);
+    background-color: var(--green);
+    font-family: "Inter", sans-serif;
+}
+.container--outside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.219);
+  padding: 20px;
+  padding-bottom: 40px;
+  background-color: var(--grey);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  width: 400px;
+}
+.btn {
+  font-size: 20px;
+  padding: 10px 16px;
+  border-radius: 5px;
+  background-color: var(--greenhove);
+  color: var(--white);
+  border: none;
+  /* cursor: pointer; */
+}
+.btn:hover {
+  background-color: var(--green);
+}
+.show--result {
+  border-radius: 5px;
+  width: 100%;
+  background-color: #343a40;
+}
+.result {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-right: 10px;
+  border-radius: 5px;
+  padding-right: 5px;
+  background-color: #343a40;
+  font-size: 24px;
+  padding: 20px 0;
+}
+.nav--close {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.calculator--container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+.btn:last-child {
+  color: var(--grey);
+  background-color: #ffd43b;
+}
+.btn:last-child:hover {
+  background-color: #fab005;
+}

@@ -6,27 +6,22 @@ let genders = document.querySelectorAll('input[name=gender]')
 
 function submitData(){
     let checkErorBtnSubmit = document.querySelector('.checkbtnSubmit')
-    let checkGender = null
+    let checkGender = ''
     for(let i = 0; i < genders.length; i++){
         if(genders[i].checked){
             checkGender = genders[i].value
         }
     }
-    try {
-        let userData = {
-            firstname: firstName.value,
-            lastname: lastName.value,
-            telphone: telePhone.value,
-            email: emails.value,
-            gender: checkGender
-        }
-        if(userData.firstname == null || userData.lastname == null || userData.email == null || userData.gender == null || checkGender == null){
-            checkErorBtnSubmit.innerHTML = 'can\'t not submit.'
-        }
-        console.log(userData)
-    }catch(error){
+    let userData = {
+        firstname: firstName.value,
+        lastname: lastName.value,
+        telphone: telePhone.value,
+        email: emails.value,
+        gender: checkGender
+    }
+    console.log(userData)
+    if(userData.firstname == '' || userData.lastname == '' || userData.telphone == '' || userData.email == '' || userData.gender == ''){
         checkErorBtnSubmit.innerHTML = 'can\'t not submit.'
-        throw new Error("cannot submit data.")
     }
 }
 
