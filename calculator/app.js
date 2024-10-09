@@ -10,52 +10,70 @@ for(let i = 0; i < btn.length; i++){
 let concatNumber = ''
 let sum = '';
 let operator = ''
-let checkNum = false
+let sumInt = 0;
 
 function calculateBtn(value){
-  let copy
   switch (value){
     case '%':
-      copy = concatNumber
-      concatNumber = ''
-      result.innerHTML = concatNumber
       if(operator === '%'){
-        result.innerHTML = `${parseFloat(sum) % parseFloat(copy) }`
-        sum += ''
-        copy += ''
-        operator = ''
-        checkNum = true
+        sumInt %= parseFloat(sum) % parseFloat(concatNumber)
+        result.innerHTML = sumInt
+        operator = '%%'
+        concatNumber = ''
+        break
+      }else if (operator === '++' || operator === '--' || operator === 'xx' || operator === '//' || operator === '%%'){
+        sumInt %= parseFloat(concatNumber)
+        result.innerHTML = sumInt
+        concatNumber = ''
+        break
       }
+      result.innerHTML = `%${concatNumber}`
+      concatNumber = ''
       operator = '%'
       break
     case 'CE':
       result.innerHTML = "0"
+      sum = '';
+      concatNumber = ''
+      operator = ''
+      sumInt = 0
       break
     case 'C':
       result.innerHTML = "0"
       sum = '';
       concatNumber = ''
       operator = ''
-      copy = ''
-      checkNum = false
+      sumInt = 0
       break
     case 'X': result.innerHTML = "X"
       break
-    case '1/x': result.innerHTML = "1/x"
+    case '1/x':
+      sumInt = 1 / parseFloat(concatNumber)
+      result.innerHTML = sumInt
       break
-    case 'x^2': result.innerHTML = "x^2"
+    case 'x^2':
+      sumInt = Math.pow(parseFloat(concatNumber), 2)
+      result.innerHTML = sumInt
       break
-    case 'x^1/2': result.innerHTML = "x^1/2"
+    case 'x^1/2':
+      sumInt = Math.pow(parseFloat(concatNumber), 1/2)
+      result.innerHTML = sumInt
       break
     case '/':
-      copy = concatNumber
-      concatNumber = ''
-      result.innerHTML = concatNumber
       if(operator === '/'){
-        result.innerHTML = `${parseFloat(sum) / parseFloat(copy) }`
-        operator = ''
-        checkNum = true
+        sumInt /= parseFloat(sum) / parseFloat(concatNumber)
+        result.innerHTML = sumInt
+        operator = '//'
+        concatNumber = ''
+        break
+      }else if (operator === '++' || operator === '--' || operator === 'xx' || operator === '//' || operator === '%%'){
+        sumInt /= parseFloat(concatNumber)
+        result.innerHTML = sumInt
+        concatNumber = ''
+        break
       }
+      result.innerHTML = `/${concatNumber}`
+      concatNumber = ''
       operator = '/'
       break
     case '7':
@@ -80,14 +98,20 @@ function calculateBtn(value){
       result.innerHTML = concatNumber
       break
     case 'x':
-      copy = concatNumber
-      concatNumber = ''
-      result.innerHTML = concatNumber
       if(operator === 'x'){
-        result.innerHTML = `${parseFloat(sum) * parseFloat(copy) }`
-        operator = ''
-        checkNum = true
+        sumInt *= parseFloat(sum) * parseFloat(concatNumber)
+        result.innerHTML = sumInt
+        operator = 'xx'
+        concatNumber = ''
+        break
+      }else if (operator === '++' || operator === '--' || operator === 'xx' || operator === '//' || operator === '%%'){
+        sumInt *= parseFloat(concatNumber)
+        result.innerHTML = sumInt
+        concatNumber = ''
+        break
       }
+      result.innerHTML = `x${concatNumber}`
+      concatNumber = ''
       operator = 'x'
       break
     case '4':
@@ -112,15 +136,20 @@ function calculateBtn(value){
       result.innerHTML = concatNumber
       break
     case '-':
-      copy = concatNumber
-      concatNumber = ''
-      result.innerHTML = concatNumber
       if(operator === '-'){
-        result.innerHTML = `${parseFloat(sum) - parseFloat(copy) }`
-  
-        operator = ''
-        checkNum = true
+        sumInt -= parseFloat(sum) - parseFloat(concatNumber)
+        result.innerHTML = sumInt
+        operator = '--'
+        concatNumber = ''
+        break
+      }else if (operator === '++' || operator === '--' || operator === 'xx' || operator === '//' || operator === '%%'){
+        sumInt -= parseFloat(concatNumber)
+        result.innerHTML = sumInt
+        concatNumber = ''
+        break
       }
+      result.innerHTML = `-${concatNumber}`
+      concatNumber = ''
       operator = '-'
       break
     case '1':
@@ -132,28 +161,33 @@ function calculateBtn(value){
       break
     case '2':
       concatNumber += '2'
-      if(operator === '' || checkNum === true){
+      if(operator === ''){
         sum += '2'
       }
       result.innerHTML = concatNumber
       break
     case '3':
       concatNumber += '3'
-      if(operator === '' || checkNum === true){
+      if(operator === ''){
         sum += '3'
       }
       result.innerHTML = concatNumber
       break
     case '+':
-      copy = parseFloat(concatNumber)
-      concatNumber = ''
-      result.innerHTML = concatNumber
       if(operator === '+'){
-        let sumInt = parseFloat(sum)
-        result.innerHTML = `${sumInt += copy}`
-        operator = ''
-        checkNum = true
+        sumInt += parseFloat(sum) + parseFloat(concatNumber)
+        result.innerHTML = sumInt
+        operator = '++'
+        concatNumber = ''
+        break
+      }else if (operator === '++' || operator === '--' || operator === 'xx' || operator === '//' || operator === '%%'){
+        sumInt += parseFloat(concatNumber)
+        result.innerHTML = sumInt
+        concatNumber = ''
+        break
       }
+      result.innerHTML = `+${concatNumber}`
+      concatNumber = ''
       operator = '+'
       break
     case '+/-': result.innerHTML = "+/-"
@@ -166,8 +200,27 @@ function calculateBtn(value){
     case '.':
       break
     case '=':
-      operator = '='
-      result.innerHTML = parseFloat(sum)+parseFloat(copy)
-      break
+      let copyConcat = concatNumber
+      if(operator === '+' || operator === '++'){
+        sumInt = parseFloat(sum) + parseFloat(copyConcat)
+        result.innerHTML = sumInt
+        concatNumber = ''
+        break
+      }else if(operator === '-' || operator === '--'){
+        sumInt = parseFloat(sum) - parseFloat(copyConcat)
+        result.innerHTML = sumInt
+        concatNumber = ''
+        break
+      }else if(operator === 'x' || operator === 'xx'){
+        sumInt = parseFloat(sum) * parseFloat(copyConcat)
+        result.innerHTML = sumInt
+        concatNumber = ''
+        break
+      }else if(operator === '/' || operator === '//'){
+        sumInt = parseFloat(sum) / parseFloat(copyConcat)
+        result.innerHTML = sumInt
+        concatNumber = ''
+        break
+      }
   }
 }
