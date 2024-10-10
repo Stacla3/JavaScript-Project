@@ -87,13 +87,23 @@ nav {
     border: none;
     background-color: #fff;
     right: 30px;
-    bottom: 10px;
-    position: absolute;
+    bottom: 30px;
+    position: fixed;
     width: 40px;
     padding: 8px 12px;
+    cursor: pointer;
+    z-index: 5;
+    visibility: hidden;
+    transition: 0.2s all;
+    transform: translateY(5rem);
 }
 
 .arrow-up {
-    stroke-width: 3px;
+    stroke-width: 4px;
     stroke: #845ef7;
+}
+
+.show-btn {
+    transform: translateY(0rem);
+    visibility: visible;
 }
