@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* #69db7c #6741d9 #fff #5f3dc4 #b197fc #845ef7*/
+
+body {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to left, #6741d9, #845ef7, #b197fc);
+    color: #fff;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 16px 0;
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+}
+
+.container-link {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.container-link a {
+    text-decoration: none;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.cover {
+    background: url('https://images.pexels.com/photos/28354146/pexels-photo-28354146/free-photo-of-a-close-up-of-a-green-plant-growing-on-a-fence.jpeg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 100px auto;
+    width: 800px;
+}
+
+p {
+    margin-bottom: 50px;
+}
+
+p:last-child {
+    margin: 0;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+}
+
+.active {
+    background-color: #000000;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+    .container-link a, .logo a{
+        color: #fff;
+    }
+}

@@ -22,6 +22,9 @@ function submitData(){
     console.log(userData)
     if(userData.firstname == '' || userData.lastname == '' || userData.telphone == '' || userData.email == '' || userData.gender == ''){
         checkErorBtnSubmit.innerHTML = 'can\'t not submit.'
+    }else{
+        window.location.href = './homePage.html'
+        setTimeout(refeshPage, 1000)
     }
 }
 
@@ -80,3 +83,8 @@ telePhone.addEventListener('keyup', ()=> {
         checkErortelphone[0].innerHTML = ''
     }
 })
+
+function refeshPage(){
+    //reload page
+    location.reload();
+}

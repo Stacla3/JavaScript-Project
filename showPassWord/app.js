@@ -1,1 +1,0 @@
-const images = document.querySelectorAll('.container-image')
