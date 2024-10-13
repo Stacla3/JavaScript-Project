@@ -175,7 +175,6 @@ function calculateBtn(value){
       break
     case '+':
       if(operator === '+'){
-<<<<<<< Updated upstream
         sumInt += parseFloat(sum) + parseFloat(concatNumber)
         result.innerHTML = sumInt
         operator = '++'
@@ -186,12 +185,6 @@ function calculateBtn(value){
         result.innerHTML = sumInt
         concatNumber = ''
         break
-=======
-        let sumInt = parseFloat(sum)
-        result.innerHTML = `${sumInt += copy}`
-        operator = ''
-        break;
->>>>>>> Stashed changes
       }
       result.innerHTML = `+${concatNumber}`
       concatNumber = ''
